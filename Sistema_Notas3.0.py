@@ -1,7 +1,6 @@
-print("Bem vindo ao Notas Master 3.0")
-nomes = []
-notas = []
-#Loop Meste
+print("Bem vindo ao Notas Master 3.6")
+alunos = {}
+#Loop Meste 
 while True:
     cadastrar = input("Deseja cadastrar um aluno? S/N? ").upper()
     if cadastrar == "S":
@@ -12,7 +11,6 @@ while True:
                 print("Entrada inválida, tente novamente")
             else:
                 print("Aluno Cadastrado")
-                nomes.append (nome)
                 break
 #Loop de cadastro de notas - se você consegue ler isso ta me devendo 10 reais
         while True:
@@ -21,22 +19,24 @@ while True:
                 print("Entrada inválida, insira uma nota de 0 a 10")
             else:
                 print("Nota Cadastrada com sucesso")
-                notas.append (nota)
+                alunos[nome] = nota
                 break
     elif cadastrar =="N":
         print("Fim do Cadastro")
         break
     else:
         print("Entrada inválida, tente novamente")
+
+print(alunos)
+
+#Pesquisa de Notas
 while True:
     resultado = input("Deseja verificar o resultado do aluno? S/N?").upper()
     if resultado == "S":
         while True:
             nome = input("Qual o nome do aluno? ").upper()
-            if nome in nomes:
+            if nome in alunos:
                 print("Aluno encontrado")
-                index = nomes.index(nome)
-                nota = notas[index]
                 if nota == 10:
                     print("Excelente!")
                     print(nome,"você foi aprovado com excelência, parabéns!")
