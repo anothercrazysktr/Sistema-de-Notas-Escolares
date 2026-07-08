@@ -1,4 +1,4 @@
-print("Bem vindo ao Notas Master 3.6")
+print("Bem vindo ao Notas Master 3.65")
 alunos = {}
 #Loop Meste 
 while True:
@@ -27,8 +27,6 @@ while True:
     else:
         print("Entrada inválida, tente novamente")
 
-print(alunos)
-
 #Pesquisa de Notas
 while True:
     resultado = input("Deseja verificar o resultado do aluno? S/N?").upper()
@@ -37,21 +35,22 @@ while True:
             nome = input("Qual o nome do aluno? ").upper()
             if nome in alunos:
                 print("Aluno encontrado")
+                nota = alunos[nome]
                 if nota == 10:
                     print("Excelente!")
-                    print(nome,"você foi aprovado com excelência, parabéns!")
+                    print(f"{nome}, você tirou {nota} e foi aprovado com excelência, parabéns!")
                 elif nota >= 7:
                     print("Aprovado")
-                    print(nome,"você foi aprovado!")
+                    print(f"{nome}, tirou {nota} e foi aprovado!")
                 elif nota >= 5:
                     print("Recuperação")
-                    print(nome,"precisa estudar mais na recuperação")
+                    print(f"{nome}, você tirou {nota} e precisa estudar mais na recuperação")
                 elif nota >= 0:
                     print("Reprovado")
-                    print(nome,"você foi reprovado")
+                    print(f"{nome} tirou {nota} e você foi reprovado")
                 break
             else:
                 print("Aluno não encontrado, tente novamente")
     elif resultado =="N":
-        print("Programa encerrado")
+        print("Programa encerrado, obrigado por utilizar o Notas Master 3.65")
         break
